@@ -31,7 +31,7 @@ require('dotenv').config()
 
 let promptgpt; 
 
-app.use(express.static('public/app')); 
+app.use(express.static('public')); 
 app.use(express.json({limit:'1mb'}));
 
 app.listen(port,()=>console.log("listening "+port));
