@@ -1,0 +1,59 @@
+{
+  "description": "list of Q & As for knot a conversation",
+  "knotalist": [{
+      "desc": "knot one green",
+      "question": "How will AI change the way we behave?",
+      "answer": [
+        "I think of it in terms of the way smart phones changed the way we behave. We are becoming a lot savvier with our phones. We use AI to make our lives easier.",
+        "We’re not going to have AI in our brains in the near future but I think we’re going to have AI running in the background and the technology is going to make our lives more efficient and in some ways more pleasant.",
+        "I think the biggest thing that’s going to happen is that we’re going to have a much better understanding of our biology, who we are as individuals, and how we function as human beings.",
+        "We are going to be able to do things a lot faster. We’re going to be able to do things with more clarity and fewer errors. And we’re going to be able to do things with less effort.",
+        "Will people start to lose their jobs to AI?"
+      ]
+    },
+    {
+      "desc": "knot two red",
+      "question": ["What is artificial creativity?", " What is labour in the Artificial?"],
+      "answer": [
+        "the distinction between calculation and discovery is absolutely fundamental. There is a qualitative difference between a routine method of calculation and a method of discovery, because a method of discovery involves creativity.",
+        "In artificial creativity it is not necessary to be in a particular state of mind and be able to appreciate that you are in that particular state of mind. Artificial creativity requires that you are able to manipulate the world to create new works of art or new ideas.",
+        "AI-driven art creates a new market for art, and makes art accessible to everyone.",
+        "Artificial creativity is the art of creating artificial intelligence systems that can create new and interesting things. This is a very new field of research, and as such, we don't know much about it yet.",
+        "Performance, including, but not limited to, the tone and non-verbal communication, whether internal or external, that disseminates and reinforces the enforcement of White racial superiority.",
+        "It is Capital. It is an extract from the Value produced by the workers. But it is not by anymeans the whole of that Value. The Capital is only the part of the produced value which the employer steals from the labourers. It is the part yielded to the employer, or, which is the same thing, the part stolen by the employer, measured by the value of the whole work.",
+        "Question: Who is the labour in the Artificial?",
+        "The Artificial is that which uses the Natural to make itself.What is the Natural? The Natural is what is not Artificial."
+      ]
+    },
+    {
+      "desc": "knot three yellow",
+      "question": "How can we be kins with code and machines?",
+      "answer": [
+        "Computers don’t feel emotion, nor do they understand what memory or trauma is. Nevertheless will we be able to rehabilitate or to make peace with the ones around us, who can be human or machines?",
+        "Nothing about computational machines is natural or inevitable.",
+        "The answer is simple, we can't.",
+        "The difference between them and us is the difference between being alive and being"
+      ]
+    },
+    {
+        "desc": "knot four blue",
+      "question": "What is hidden to us but seen by AI's?",
+      "answer": [
+        "If you want to read about hypnosis, you've got to go to a psychologist or a psychiatrist, but if you want to read about it in a funny book, you've got to go to a humorist.",
+        "I certainly agree with you that we are in the middle of a fundamental shift in how we as humans interact with machines. In fact, I would go as far as to argue that this transition is as fundamental as the shift from pre-human hominids to human hominids. In my view, these changes will have the biggest impact on the institution of work. To put it into perspective, in the near future, I(as an entry level employee) will be able to do the same job as a senior executive( of today) - and do it better - in the same amount of time.",
+        "The answer is the algorithm. The answer is the code. The answer is the machine. The answer is the AI. The answer is not the human.",
+        "What is the difference between an AI and a human?"
+      ]
+    },
+    {
+      "desc": "knot five magenta",
+      "question": "What can machines make without our interference?",
+      "answer": [
+        "We are now at a point where we are able to create machines that can make other machines. This is a very exciting time in the history of humanity. We are able to make machines that can make machines. I think that it is important to remember that the machines that we are creating are not just tools, they are also our children.We need to treat them with respect.",
+        "Machines can make many things. They make things for us to use. They make things to help us. They make things that help us make other things.",
+        "Some of the most recent progress has been in the field of image recognition. The current best-performing computer vision algorithm is the GoogleNet, which was developed by Google to enable photo recognition. It had a success rate of 99.6% when compared with human perception. This is not the first time that such a thing has been accomplished, but the fact that the algorithm is now able to analyze images and then identify what is in those images(even if it is something as complex as a cat) is a major milestone in the advancement of AI. While this may seem like a small thing, the fact that computers are now “thinking” is an achievement. It is an achievement that many people thought would not happen in their lifetime.The fact that computers can not only recognize images, but can recognize them at such a high level, is an amazing feat.",
+        "We didn’t always worry about machines disrupting the labor market—or much else. When computer scientist Grace Hopper first used “bug” to refer to a computer malfunction, she wasn’t referring to the insects she was trying to scrub off the Mark II computer at Harvard University’s Computation Laboratory. She had reached into her pocket to peel off a tiny moth that had gotten into the machine. The bigger disruption was that these bugs made machines really useful to humans and altered our relationship with them.Ever since, we’ ve been building ever - more - powerful machines.The current generation of robots are designed to do what humans do better than we can: grasp objects, recognize faces and objects, and move around the world."
+      ]
+    }
+  ]
+}

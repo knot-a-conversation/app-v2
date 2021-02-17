@@ -1,0 +1,107 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+video {
+  z-index: -1000;
+  margin-top: 20%;
+}
+
+.awrd {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  color: #444444;
+  font-size: 25px;
+  text-align: center;
+  margin-left: auto;
+  margin-top: 65%;
+  margin-bottom: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: rgba(255,255,255,0.7)
+  /* height: 50% */
+}
+
+#introduction {
+  font-family: 'Rajdhani', sans-serif;
+  /* text-align: center; */
+  color: #444444;
+  font-size: 25px;
+  margin-left: 20px;
+  width: 80%
+}
+
+#introduction h2 {
+  font-weight: 500;
+  font-size: 30px;
+  margin-top: 2%
+}
+
+.btnclass {
+  padding: 10px;
+  background-color: #34dede;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  margin-left: 20px;
+  width: 50%;
+    border: none
+}
+
+#ansB {
+  padding: 10px;
+  position: fixed;
+  bottom: 5%;
+  left: 25%;
+  border: none;
+  background-color: #34dede;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  /* margin-left: 50%; */
+  /* margin-top: 15%; */
+  /* margin-bottom: auto; */
+  /* margin-right: 50%; */
+  width: 50%;
+  /* z-index:10 */
+}
+
+.rAns {
+
+  /* background-color: grey; */
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+
+  position: fixed; /*  Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255); /* Black background with opacity */
+  z-index: 12; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  /* width: 100%; */
+}
+
+.spanAns {
+
+  margin: 10%;
+}
+.back{
+  padding: 10px;
+  position: fixed;
+  bottom: 5%;
+  left: 25%;
+  border: none;
+  background-color: #34dede;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 20px;
+  width: 50%;
+  z-index: 30
+}
