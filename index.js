@@ -24,6 +24,7 @@ let ref = database.ref('answers');
 
 const express = require('express');
 const app = express();
+// const port = process.env.PORT;
 const port = 3000;
 
 const got = require('got');
@@ -63,6 +64,7 @@ async function getGPT(){
       const response = await got.post(url, { json: params, headers: headers }).json();
       // output = `${response.choices[0].text}`;
       var outputgen = {
+        // question: promptgpt,
         name: response.choices[0].text
       }
       ref.push(outputgen)
@@ -71,5 +73,3 @@ async function getGPT(){
       console.log(err);
     }
   };
-  
-  

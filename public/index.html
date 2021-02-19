@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <script src="p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
@@ -20,9 +21,13 @@
 <div class="bgANS">
 
   <!-- <script src="sketch-test.js"></script> -->
+  <h2 id='heading'>K(NOT) A CONVERSATION</h2>
   <div id="introduction">
-    <h2>K(NOT) A CONVERSATION</h2>
-    <p id="accept">This project requires access to your camera. Please click "Accept" to continue.</p>
+    <p>This is the companion app for the <b>K(not) a Conversation</b> installation exploring the concepts of artificial intelligence, creativity and labour. Inspired by ancient indigenous communication systems of Quipu knots, it instigates a communication and reflection process through the use of knots and AI systems.</p>
+    <h3>Instructions</h3>
+    <p>Move your viewfinder around the sculpture. Bring your camera closer to the knots and you will find some questions embedded in them. </p>
+    <p>Tap the <b>"Generate answer"</b> button for a response from the AI.</p>
+    <p id="accept">This project requires access to your camera and audio. Please tap <b>"Accept"</b> to continue.</p>
   </div>
 </div>
 <script>
@@ -41,7 +46,10 @@ function off() {
   
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-database.js"></script>
-
+    <script src="speak-foo.js"></script>
+    <script src="prompt-api.js"></script>
+    <script src="firebase-db.js"></script>
+    <script src="answers.js"></script>
     <script src="sketch-nonios.js"></script>
 </body>
 

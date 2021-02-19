@@ -26,14 +26,29 @@ video {
   background-color: rgba(255,255,255,0.7)
   /* height: 50% */
 }
-
-#introduction {
+#heading{
+  color: #444444;
+  margin-left: 25px;
+  width: 80%;
   font-family: 'Rajdhani', sans-serif;
+  font-size: 23px;
+}
+#introduction {
+
   /* text-align: center; */
   color: #444444;
-  font-size: 25px;
+  
   margin-left: 20px;
   width: 80%
+}
+
+#introduction > h3{
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+}
+ #introduction > p {
+  font-family: 'Roboto',sans-serif;
+  font-size: 17px;
 }
 
 #introduction h2 {
@@ -49,7 +64,8 @@ video {
   font-size: 20px;
   margin-left: 20px;
   width: 50%;
-    border: none
+  border: none;
+  border-radius: 3px;
 }
 
 #ansB {
