@@ -56,13 +56,14 @@ app.post('/api',(request,response,next)=>{
 })
 
 app.listen(port,()=>console.log("listening "+port));
-
+const fullstop  = `.`
 async function getGPT(){
     const url = 'https://api.openai.com/v1/engines/davinci/completions';
     const params = {
       "prompt": promptgpt,
-      "max_tokens": 50,
-      "temperature": 0.7,
+      "max_tokens": 60,
+      "temperature": 0.5,
+      // "stop": fullstop,
       "frequency_penalty": 0.5
     };
     const headers = {

@@ -41,7 +41,7 @@ let vid;
 let dict;
 
 //added p5 speech
-let utterance;
+let foo = window.speechSynthesis;
 
 //variable for the GPT3 answers
 // let answerGPT;
@@ -69,10 +69,6 @@ function setup() {
     audio: false
   };
 
-//speed of talking
-  // foo.setRate(0.87)
-//this allows from any other actions to override the speech, otherwise you have to wait for the speech to finish
-  // foo.interrupt = true;
 
   textFont('Rajdhani')
   button = createButton("Accept")
@@ -184,6 +180,7 @@ function cArr(k, i) {
 function giveanswer() {
    sendData(prompt)
     .then(()=>addAnswerPage())
+    // .then(()=>synth())
     .catch((error) => {
       console.error('Error:', error);
     })
@@ -210,11 +207,13 @@ async function sendData(prompt){
           var obj = JSON.parse(data); // this is how you parse a string into JSON 
           // console.log(obj)
           machAns2.html(obj)
-          utterance = new SpeechSynthesisUtterance(obj)
+          return obj
         } catch (ex) {
           console.error(ex);
         }
-        //  outputgen = data;
+       }).then(synth => {
+         utterance = new SpeechSynthesisUtterance(synth)
+         foo.speak(utterance)
        });
       console.log("sent question prompt")
       // answerfinal = "";
@@ -229,15 +228,18 @@ async function sendData(prompt){
 function addAnswerPage(){
   answerbtn.hide()
   machAns.show()
-  // machAns2.html(data)
-  foo.speak(utterance)
 }
+
+// function synth() {
+//   foo.speak(utterance)
+//  }
 
 function moveBG() {
   //if you click back button the audio will stop
-  foo.cancel()
+  
+    foo.cancel()
+  
   machAns.hide()
   machAns2.html("")
-
   bk.hide()
 }
