@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/knot-a-conversation/app.git"
   },
-  "author": "",
+  "author": "ambikajo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/knot-a-conversation/app/issues"
@@ -19,7 +20,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "firebase": "^8.2.7",
+    "firebase": "^8.2.9",
     "got": "^11.8.1"
   }
 }
