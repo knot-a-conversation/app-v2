@@ -128,3 +128,43 @@ video {
   z-index: 30;
   border-radius: 3px;
 }
+
+#dblist {
+  width: 65%; /* Full width (cover the whole page) */
+  height: 100%;
+ 
+  margin: 2em;
+}
+#dblist > h2{
+  font-family: "Rajdhani", sans-serif;
+  font-size: 30px;
+  border-bottom: 2px solid #34dede;
+}
+
+#dblist > span{
+  font-family: 'Roboto',sans-serif;
+  font-size: 17px;
+}
+
+.qna{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  &::before {
+    content: "\A";
+  }
+}
+
+.db{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.dba{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  border-bottom: 1px dotted #6abdbd;
+  padding-bottom: 1.5em;
+}

@@ -47,7 +47,7 @@ let foo = window.speechSynthesis;
 // let answerGPT;
 
 //firebase database intialise
-let database;
+// let database;
 
 function preload() {
   classifier = ml5.imageClassifier(imageModelURL + 'model.json');
@@ -106,7 +106,7 @@ function setup() {
 
   //setting up firebase in the client
  
-  database = firebase.database();
+  // database = firebase.database();
   
 }
 //check orientation rather than platform

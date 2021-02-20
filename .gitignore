@@ -2,3 +2,4 @@
 /public/.env
 node_modules
 http.rest
+ngrok.exe

@@ -62,7 +62,7 @@ async function getGPT(){
     const params = {
       "prompt": promptgpt,
       "max_tokens": 60,
-      "temperature": 0.5,
+      "temperature": 0.7,
       // "stop": fullstop,
       "frequency_penalty": 0.5
     };
@@ -74,7 +74,7 @@ async function getGPT(){
       const response = await got.post(url, { json: params, headers: headers }).json();
      
       var outputgen = {
-        // question: promptgpt,
+        question: promptgpt,
         name: response.choices[0].text
       }
       keygpt = ref.push(outputgen);
