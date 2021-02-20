@@ -150,9 +150,7 @@ video {
   font-family: 'Roboto',sans-serif;
   font-weight: 700;
   font-size: 17px;
-  &::before {
-    content: "\A";
-  }
+
 }
 
 .db{
