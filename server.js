@@ -26,28 +26,36 @@ const express = require('express');
 const app = express();
 // const port = process.env.PORT;
 const port = 3000;
-
+const router = express.Router() 
 const got = require('got');
 require('dotenv').config()
 
 let promptgpt; 
+let keygpt;
 
 app.use(express.static('public')); 
 app.use(express.json({limit:'1mb'}));
 
-app.listen(port,()=>console.log("listening "+port));
 
 app.post('/api',(request,response,next)=>{
-    console.log("i got a request");
-    promptgpt = request.body.prompt;
-    console.log(promptgpt)
-    response.json({
-        status:'yay-works',
-    });
-    next();
-    getGPT();
-    
+  console.log("i got a request");
+  promptgpt = request.body.prompt;
+  console.log(promptgpt)
+  // next();
+  var gptanswers = getGPT();
+  console.log(gptanswers);
+  gptanswers.then((yugen) =>{
+    var JSONdata = JSON.stringify(yugen.name);
+    console.log(JSONdata);
+    response.send(JSONdata);
+    return;
+  }).catch((err)=>{
+    console.error(err)
+  });
+  
 })
+
+app.listen(port,()=>console.log("listening "+port));
 
 async function getGPT(){
     const url = 'https://api.openai.com/v1/engines/davinci/completions';
@@ -61,14 +69,19 @@ async function getGPT(){
       'Authorization': `Bearer ${process.env.OPENAI_SECRET_KEY}`,
     };
     try {
+      // return await Promise.resolve("testing the sound API with fake promises");
       const response = await got.post(url, { json: params, headers: headers }).json();
-      // output = `${response.choices[0].text}`;
+     
       var outputgen = {
         // question: promptgpt,
         name: response.choices[0].text
       }
-      ref.push(outputgen)
-      console.log("Answer pushed to DB")
+      keygpt = ref.push(outputgen);
+      return await Promise.resolve(outputgen);
+      // console.log();
+      console.log("Answer pushed to DB. This is the db key: "+keygpt.key);
+      // console.log(outputgen);
+      return outputgen;
     } catch (err) {
       console.log(err);
     }

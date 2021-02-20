@@ -1,6 +1,7 @@
 
 //variable for the GPT3 answers
 let answerGPT;
+let answerfinal;
 
 async function GPTAnswer(){
   // let allanswers = selectAll('spanAns')
@@ -8,17 +9,16 @@ async function GPTAnswer(){
   //   allanswers[i].remove();
   // }
     let ref = database.ref('answers')
-    ref.on('value',(snapshot) => {
-      const data = snapshot.val();
+    ref.endAt().limitToLast(1).on('child_added',async (snapshot,prevChildKey) => {
+      var data = snapshot.val();
       let keys = Object.keys(data)
-     
-        k = keys[keys.length-1]
-        answerGPT = data[k].name;
-        answerfinal= answerGPT; 
-    
-    });
-    // console.log(answerGPT);
-    
+       answerGPT = data.name;
+      //  console.log(answerGPT)
+          // console.log("new key should be: " + data.key)
+          // console.log("Previous Post ID: " + prevChildKey);
+          
+  });
+
   };
   
 

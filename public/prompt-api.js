@@ -1,3 +1,5 @@
+
+
 //a global variable for gpt3 prompt
 let prompt;
 
@@ -15,9 +17,16 @@ async function sendData(prompt){
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(knotdata)
       };
-       fetch('/api',options);
+       fetch('/api',options).then(response =>{
+         console.log(response)
+         return response.text();
+       }).then(data =>{
+         console.log(data)
+        //  outputgen = data;
+         machAns2.html(data)
+       });
       console.log("sent question prompt")
-      answerfinal = "";
+      // answerfinal = "";
     } else {
       console.log('no data incoming')
     }

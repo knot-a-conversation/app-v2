@@ -31,7 +31,7 @@ let intro;
 let constraints;
 let machAns;
 let machAns2;
-let answerfinal;
+
 let diff;
 let bk;
 //video variable
@@ -41,7 +41,7 @@ let vid;
 let dict;
 
 //added p5 speech
-// let foo = new p5.Speech('Google US English');
+let utterance;
 
 //variable for the GPT3 answers
 // let answerGPT;
@@ -180,22 +180,64 @@ function cArr(k, i) {
   answerbtn.mousePressed(giveanswer)
 }
 
-function addAnswerPage(answerfinal){
+//chained function, send data prompt to server.js retrieve GPT3 output send to DIV as answer
+function giveanswer() {
+   sendData(prompt)
+    .then(()=>addAnswerPage())
+    .catch((error) => {
+      console.error('Error:', error);
+    })
+   bk.show();
+    
+  }
+
+//send sata about the knots to the server, with response.text retrieve data back to "spanAns" Div 
+async function sendData(prompt){
+    if(label != ""){
+      const knotdata = {prompt};
+      // console.log(knotdata)
+      const options ={
+        method:'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(knotdata)
+      };
+       fetch('/api',options).then(response =>{
+         console.log(response)
+         return response.text();
+       }).then(data =>{
+        //  console.log(data)
+         try {
+          var obj = JSON.parse(data); // this is how you parse a string into JSON 
+          // console.log(obj)
+          machAns2.html(obj)
+          utterance = new SpeechSynthesisUtterance(obj)
+        } catch (ex) {
+          console.error(ex);
+        }
+        //  outputgen = data;
+       });
+      console.log("sent question prompt")
+      // answerfinal = "";
+    } else {
+      console.log('no data incoming')
+    }
+    // const result = GPTAnswer();
+    console.log("received GPT answer")
+  }
+
+  
+function addAnswerPage(){
   answerbtn.hide()
   machAns.show()
-  machAns2.html(answerfinal)
-  foo.speak(answerfinal)
+  // machAns2.html(data)
+  foo.speak(utterance)
 }
 
 function moveBG() {
   //if you click back button the audio will stop
-  foo.stop()
+  foo.cancel()
   machAns.hide()
+  machAns2.html("")
+
   bk.hide()
 }
-
-function giveanswer() {
-   sendData(prompt).then(()=>GPTAnswer()).then(()=>addAnswerPage(answerfinal))
-   bk.show();
-    
-  }
