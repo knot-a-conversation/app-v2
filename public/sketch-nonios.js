@@ -249,5 +249,5 @@ function moveBG() {
   machAns2.html("")
   bk.hide()
   counter++
-  console.log(counter)
+  console.log("counter "+counter)
 }
