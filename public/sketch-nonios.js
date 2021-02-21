@@ -212,8 +212,8 @@ async function sendData(prompt){
           fStop = ". ";
           joiner = join(spl,fStop);
           finalAns = joiner+fStop;
-          machAns2.html(obj);
-          return obj;
+          machAns2.html(finalAns);
+          return finalAns;
         } catch (ex) {
           console.error(ex);
         }

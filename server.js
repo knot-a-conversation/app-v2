@@ -61,7 +61,7 @@ async function getGPT(){
     const url = 'https://api.openai.com/v1/engines/davinci/completions';
     const params = {
       "prompt": promptgpt,
-      "max_tokens": 70,
+      "max_tokens": 80,
       "temperature": 0.7,
       // "stop": fullstop,
       "frequency_penalty": 0.5
