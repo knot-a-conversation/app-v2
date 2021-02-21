@@ -15,7 +15,7 @@ async function GPTAnswer(){
   //   allanswers[i].remove();
   // }
     let ref = database.ref('answers')
-    ref.limitToLast(10).on('child_added',async (snapshot,prevChildKey) => {
+    ref.orderByKey().startAt("-MU-UPUEqxKTznVL7Jpe").on('child_added',async (snapshot) => {
       var data = snapshot.val();
       let keys = Object.keys(data)
        answerGPT = data.name;
@@ -24,15 +24,20 @@ async function GPTAnswer(){
           // console.log("new key should be: " + data.key)
           // console.log("Previous Post ID: " + prevChildKey);
           const ques = createP("Question: ").addClass("qna");
-          var li_q = createSpan(data.question+"\n").addClass("db");  
-         
+          var li_q = createP(data.question+"\n").addClass("db");  
+          
           const answers = createP("Answer: ").addClass("qna");
           var li_a = createP(data.name).addClass("dba");  
-          ques.parent("dblist");
-          li_q.parent("dblist");
-          answers.parent("dblist");
-          li_a.parent("dblist");
-       
+
+        set = createDiv().addClass("set-order")
+        q_set = ques.parent(set);
+        q_set2 =  li_q.parent(set);
+        a_set= answers.parent(set);
+        a_set2=  li_a.parent(set);
+
+        // reverseSet = createDiv().addId("reverse-order")
+        set.parent("reverse-order")
+     
   });
   };
 

@@ -45,7 +45,7 @@ let foo = window.speechSynthesis;
 
 //variable for the GPT3 answers
 // let answerGPT;
-
+let counter = 0;
 //firebase database intialise
 // let database;
 
@@ -185,7 +185,7 @@ function giveanswer() {
       console.error('Error:', error);
     })
    bk.show();
-    
+  
   }
 
 //send sata about the knots to the server, with response.text retrieve data back to "spanAns" Div 
@@ -206,8 +206,14 @@ async function sendData(prompt){
          try {
           var obj = JSON.parse(data); // this is how you parse a string into JSON 
           // console.log(obj)
-          machAns2.html(obj)
-          return obj
+          
+          spl = obj.split(". ");
+          spl.pop();
+          fStop = ". ";
+          joiner = join(spl,fStop);
+          finalAns = joiner+fStop;
+          machAns2.html(obj);
+          return obj;
         } catch (ex) {
           console.error(ex);
         }
@@ -237,9 +243,11 @@ function addAnswerPage(){
 function moveBG() {
   //if you click back button the audio will stop
   
-    foo.cancel()
+  foo.cancel()
   
   machAns.hide()
   machAns2.html("")
   bk.hide()
+  counter++
+  console.log(counter)
 }

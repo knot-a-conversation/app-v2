@@ -134,6 +134,7 @@ video {
   height: 100%;
  
   margin: 2em;
+ 
 }
 #dblist > h2{
   font-family: "Rajdhani", sans-serif;
@@ -163,6 +164,21 @@ video {
   font-family: 'Roboto',sans-serif;
   font-weight: 400;
   font-size: 17px;
+  
+}
+
+ .set-order{
+ 
   border-bottom: 1px dotted #6abdbd;
   padding-bottom: 1.5em;
+} 
+
+
+#reverse-order{
+  width: 65%; /* Full width (cover the whole page) */
+  height: 100%;
+ 
+  margin: 2em;
+  display: flex;
+  flex-direction: column-reverse;
 }
