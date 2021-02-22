@@ -219,6 +219,7 @@ async function sendData(prompt){
         }
        }).then(synth => {
          utterance = new SpeechSynthesisUtterance(synth)
+         utterance.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Microsoft David Desktop - English (United States)'; })[0];
          foo.speak(utterance)
        });
       console.log("sent question prompt")
