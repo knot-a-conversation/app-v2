@@ -70,7 +70,7 @@ async function getGPT(){
       'Authorization': `Bearer ${process.env.OPENAI_SECRET_KEY}`,
     };
     try {
-      // return await Promise.resolve("testing the sound API with fake promises");
+      return await Promise.resolve("testing the sound API with fake promises");
       const response = await got.post(url, { json: params, headers: headers }).json();
      
       var outputgen = {

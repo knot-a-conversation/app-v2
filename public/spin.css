@@ -1,6 +1,6 @@
 .spinner {
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   position: relative;
   top:10rem;
   margin: 100px auto;
@@ -12,13 +12,13 @@
   height: 100%;
   border-radius: 50%;
   background-color: #34dede;
-  opacity: 0.6;
+  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
   
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
+  -webkit-animation: sk-bounce 3.0s infinite ease-in-out;
+  animation: sk-bounce 3.0s infinite ease-in-out;
  
 }
 
@@ -28,16 +28,16 @@
 }
 
 @-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
+  0%, 100% { -webkit-transform: scale(0.2) }
+  50% { -webkit-transform: scale(1.2) }
 }
 
 @keyframes sk-bounce {
   0%, 100% { 
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
+    transform: scale(0.2);
+    -webkit-transform: scale(0.2);
   } 50% { 
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
   }
 }

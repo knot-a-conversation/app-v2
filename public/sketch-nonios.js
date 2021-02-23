@@ -40,8 +40,9 @@ let vid;
 //dictionary for the qna
 let dict;
 
-//added p5 speech
+//added Speech Web API 
 let foo = window.speechSynthesis;
+let voice;
 
 //variable for the GPT3 answers
 // let answerGPT;
@@ -107,6 +108,10 @@ function setup() {
   spinner = select('.spinner')
   spinner.hide()
   
+  voice = foo.getVoices().filter(function(voice) {
+    return voice.lang === 'en-US';
+    // return voice.name === 'Google US English';
+  })[0];
 }
 //check orientation rather than platform
 function startStream() {
@@ -208,7 +213,7 @@ async function sendData(prompt){
           // console.log(obj)
           // return obj
           spl = obj.split(". ");
-          if(spl.length > 1){
+          if(spl.length > 2){
             spl.pop();
             fStop = ". ";
             joiner = join(spl,fStop);
@@ -225,7 +230,10 @@ async function sendData(prompt){
         }
        }).then(synth => {
          utterance = new SpeechSynthesisUtterance(synth)
-         utterance.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Microsoft David Desktop - English (United States)'; })[0];
+         utterance.voice = voice;
+        
+        utterance.rate = 0.8;
+         utterance.voice = voice;
          foo.speak(utterance)
        });
       console.log("sent question prompt")
