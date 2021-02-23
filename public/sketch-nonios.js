@@ -104,9 +104,8 @@ function setup() {
   answerbtn.hide()
   answerbtn.id("ansB")
 
-  //setting up firebase in the client
- 
-  // database = firebase.database();
+  spinner = select('.spinner')
+  spinner.hide()
   
 }
 //check orientation rather than platform
@@ -191,6 +190,7 @@ function giveanswer() {
 //send sata about the knots to the server, with response.text retrieve data back to "spanAns" Div 
 async function sendData(prompt){
     if(label != ""){
+      spinner.show()
       const knotdata = {prompt};
       // console.log(knotdata)
       const options ={
@@ -206,13 +206,19 @@ async function sendData(prompt){
          try {
           var obj = JSON.parse(data); // this is how you parse a string into JSON 
           // console.log(obj)
-          
+          // return obj
           spl = obj.split(". ");
-          spl.pop();
-          fStop = ". ";
-          joiner = join(spl,fStop);
-          finalAns = joiner+fStop;
+          if(spl.length > 1){
+            spl.pop();
+            fStop = ". ";
+            joiner = join(spl,fStop);
+            finalAns = joiner+fStop;
+          } else {
+            finalAns = obj;
+          }
+          
           machAns2.html(finalAns);
+          spinner.hide()
           return finalAns;
         } catch (ex) {
           console.error(ex);

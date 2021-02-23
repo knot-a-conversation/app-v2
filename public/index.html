@@ -6,6 +6,7 @@
   <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"></meta>
   <meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="spin.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -28,6 +29,10 @@
     <p id="accept">This project requires access to your camera and audio. Please tap <b>"Accept"</b> to continue.</p>
   </div>
 </div>
+<div class="spinner">
+  <div class="double-bounce1"></div>
+  <div class="double-bounce2"></div>
+</div>
 <script>
 function on() {
   document.getElementsByClass("rAns").style.display = "block";
@@ -35,6 +40,14 @@ function on() {
 
 function off() {
   document.getElementsByClass("rAns").style.display = "none";
+}
+
+function spinOn() {
+  document.getElementsByClass("spinner").style.display = "block";
+}
+
+function spinOff() {
+  document.getElementsByClass("spinner").style.display = "none";
 }
 </script>
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
