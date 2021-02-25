@@ -15,7 +15,7 @@ async function GPTAnswer(){
   //   allanswers[i].remove();
   // }
     let ref = database.ref('answers')
-    ref.orderByKey().startAt("-MU-UPUEqxKTznVL7Jpe").on('child_added',async (snapshot) => {
+    ref.orderByKey().startAt("-MU8aTYxRZzTRFoaMgQA").on('child_added',async (snapshot) => {
       var data = snapshot.val();
       let keys = Object.keys(data)
        answerGPT = data.name;
