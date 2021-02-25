@@ -19,26 +19,15 @@ async function GPTAnswer(){
       var data = snapshot.val();
       let keys = Object.keys(data)
        answerGPT = data.name;
-        console.log(answerGPT)
        questionprompt = data.question;
-       spl = answerGPT.split(". ");
-          if(spl.length > 1){
-            spl.pop();
-            fStop = ". ";
-            joiner = join(spl,fStop);
-            finalAns = joiner+fStop;
-          } else {
-            finalAns = answerGPT;
-          }
-          
-       console.log(finalAns)
+      //  console.log(answerGPT)
           // console.log("new key should be: " + data.key)
           // console.log("Previous Post ID: " + prevChildKey);
           const ques = createP("Question: ").addClass("qna");
           var li_q = createP(data.question+"\n").addClass("db");  
           
           const answers = createP("Answer: ").addClass("qna");
-          var li_a = createP(finalAns).addClass("dba");  
+          var li_a = createP(data.name).addClass("dba");  
 
         set = createDiv().addClass("set-order")
         q_set = ques.parent(set);
