@@ -2,11 +2,12 @@
 //must be listed before other Firebase SDKs
 
 var firebase = require("firebase/app");
-import { serverTimestamp } from 'firebase/firestore'
+// import serverTimestamp from 'firebase/firestore'
 
 // Add the Firebase products that you want to use
 require("firebase/auth");
 require("firebase/database");
+require('firebase/firestore');
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -30,6 +31,7 @@ const port = process.env.PORT || 3000;
 const router = express.Router() 
 const got = require('got');
 require('dotenv').config()
+// console.log(process.env) // remove this after you've confirmed it working
 
 let promptgpt; 
 let keygpt;
@@ -71,18 +73,19 @@ async function getGPT(){
       'Authorization': `Bearer ${process.env.OPENAI_SECRET_KEY}`,
     };
     try {
-      // return await Promise.resolve("testing the sound API with fake promises");
+      //  return await Promise.resolve("testing the sound API with fake promises");
       const response = await got.post(url, { json: params, headers: headers }).json();
      
       var outputgen = {
         question: promptgpt,
         name: response.choices[0].text,
-        dateCreated:  serverTimestamp()
+       startedAt: firebase.database.ServerValue.TIMESTAMP
       }
       keygpt = ref.push(outputgen);
+      console.log(outputgen.dateCreated)
       return await Promise.resolve(outputgen);
-      // console.log();
       console.log("Answer pushed to DB. This is the db key: "+keygpt.key);
+      // console.log();
       // console.log(outputgen);
       return outputgen;
     } catch (err) {
