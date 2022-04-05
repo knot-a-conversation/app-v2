@@ -2,6 +2,7 @@
 //must be listed before other Firebase SDKs
 
 var firebase = require("firebase/app");
+import { serverTimestamp } from 'firebase/firestore'
 
 // Add the Firebase products that you want to use
 require("firebase/auth");
@@ -75,7 +76,8 @@ async function getGPT(){
      
       var outputgen = {
         question: promptgpt,
-        name: response.choices[0].text
+        name: response.choices[0].text,
+        dateCreated:  serverTimestamp()
       }
       keygpt = ref.push(outputgen);
       return await Promise.resolve(outputgen);
